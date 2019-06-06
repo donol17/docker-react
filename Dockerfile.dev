@@ -1,0 +1,14 @@
+#Specify base image
+FROM node:alpine
+
+#Assign directory within the container apps will be written to
+WORKDIR '/app'
+
+#Find package.json first, execute npm install, then run other file migrations
+COPY ./package.json ./
+RUN npm install
+
+COPY ./ ./
+
+#Command to run on container start, in this case launching the Node dev server
+CMD ["npm", "run", "start"]
