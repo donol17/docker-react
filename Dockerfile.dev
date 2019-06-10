@@ -5,10 +5,10 @@ FROM node:alpine
 WORKDIR '/app'
 
 #Find package.json first, execute npm install, then run other file migrations
-COPY ./package.json ./
+COPY package.json .
 RUN npm install
 
-COPY ./ ./
+COPY . .
 
 #Command to run on container start, in this case launching the Node dev server
 CMD ["npm", "run", "start"]
