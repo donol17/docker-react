@@ -11,6 +11,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: "b6c17246-9ecb-4362-b103-36306717c102"
-  app: docker-react
-  on: master
+    secure: "$Heroku_AK"
+  app: docker-react-donol17
+  on:
+    branch: master
