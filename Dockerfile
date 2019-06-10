@@ -3,7 +3,7 @@ FROM node:alpine as builder
 WORKDIR '/app'
 COPY package.json .
 RUN npm install
-copy . .
+COPY . .
 RUN npm run build
 
 #The production phase
