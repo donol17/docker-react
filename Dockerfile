@@ -1,9 +1,9 @@
 #Base image and specifying build phase
 FROM node:alpine as builder
 WORKDIR '/app'
-COPY ./package.json ./
+COPY package.json .
 RUN npm install
-copy ./ ./
+copy . .
 RUN npm run build
 
 #The production phase
